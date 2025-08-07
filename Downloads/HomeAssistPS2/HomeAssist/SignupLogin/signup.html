@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of Tab Favicon svg & Stylesheet -->
+    <title>Sign Up / Log In - HomeAssist</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/HomeAssist/assets/tab_logo.svg"
+    />
+    <link rel="stylesheet" href="/HomeAssist/SignupLogin/signup.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="navbar">
+        <!-- Logo SVG HomeAssist -->
+        <a href="/HomeAssist/homepage.html" class="logo">
+          <img
+            src="/HomeAssist/assets/home-assist-logo.svg"
+            alt="HomeAssist Logo"
+          />
+        </a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-container" id="nav-container">
+          <ul class="nav-links">
+            <li><a href="/HomeAssist/homepage.html">Home</a></li>
+            <li><a href="/HomeAssist/Servicepage/index.html">Services</a></li>
+            <li><a href="/HomeAssist/SignupLogin/signup.html">Sign up / Log in</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-section">
+          <div class="hero-container">
+            <h1 class="hero-title">Join HomeAssist Today</h1>
+            <p class="hero-subtitle">Connect with trusted professionals for all your home tasks</p>
+          </div>
+        </section>
+
+        <!-- Authentication Section -->
+        <section class="auth-section">
+          <div class="auth-container">
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+              <button class="tab-btn active" data-tab="signup">Sign Up</button>
+              <button class="tab-btn" data-tab="login">Log In</button>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div class="auth-form-container" id="signup-form" style="display: block;">
+              <h2 class="form-title">Create Your Account</h2>
+              <p class="form-subtitle">Join thousands of satisfied customers</p>
+
+              <form class="auth-form" id="signupForm">
+                <!-- Account Type Selection -->
+                <div class="account-type-selection">
+                  <label class="account-type">
+                    <input type="radio" name="accountType" value="customer" checked>
+                    <span class="account-type-content">
+                      <strong>Customer</strong>
+                      <small>I need help with tasks</small>
+                    </span>
+                  </label>
+                  <label class="account-type">
+                    <input type="radio" name="accountType" value="tasker">
+                    <span class="account-type-content">
+                      <strong>Tasker</strong>
+                      <small>I want to offer services</small>
+                    </span>
+                  </label>
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="signupFirstName" class="form-label">First Name *</label>
+                    <input
+                      type="text"
+                      id="signupFirstName"
+                      name="firstName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="signupLastName" class="form-label">Last Name *</label>
+                    <input
+                      type="text"
+                      id="signupLastName"
+                      name="lastName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="signupEmail" class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    id="signupEmail"
+                    name="email"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="signupPhone" class="form-label">Phone Number *</label>
+                  <input
+                    type="tel"
+                    id="signupPhone"
+                    name="phone"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="signupPassword" class="form-label">Password *</label>
+                  <div class="password-input-container">
+                    <input
+                      type="password"
+                      id="signupPassword"
+                      name="password"
+                      class="form-input"
+                      required
+                    />
+                    <button type="button" class="password-toggle" data-target="signupPassword">
+                      <span class="eye-icon">👁️</span>
+                    </button>
+                  </div>
+                  <div class="password-requirements">
+                    <small>Password must be at least 8 characters long</small>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirmPassword" class="form-label">Confirm Password *</label>
+                  <div class="password-input-container">
+                    <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      class="form-input"
+                      required
+                    />
+                    <button type="button" class="password-toggle" data-target="confirmPassword">
+                      <span class="eye-icon">👁️</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Address Information (for Taskers) -->
+                <div class="tasker-fields" style="display: none;">
+                  <div class="form-group">
+                    <label for="signupAddress" class="form-label">Address</label>
+                    <input
+                      type="text"
+                      id="signupAddress"
+                      name="address"
+                      class="form-input"
+                    />
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="signupCity" class="form-label">City</label>
+                      <input
+                        type="text"
+                        id="signupCity"
+                        name="city"
+                        class="form-input"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="signupState" class="form-label">State</label>
+                      <input
+                        type="text"
+                        id="signupState"
+                        name="state"
+                        class="form-input"
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label for="signupZip" class="form-label">ZIP Code</label>
+                      <input
+                        type="text"
+                        id="signupZip"
+                        name="zipCode"
+                        class="form-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="skillsDescription" class="form-label">Skills & Experience</label>
+                    <textarea
+                      id="skillsDescription"
+                      name="skillsDescription"
+                      class="form-textarea"
+                      rows="3"
+                      placeholder="Briefly describe your skills and experience..."
+                    ></textarea>
+                  </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="agreeTerms" required>
+                    <span class="checkmark"></span>
+                    I agree to the <a href="#" class="terms-link">Terms of Service</a> and 
+                    <a href="#" class="terms-link">Privacy Policy</a>
+                  </label>
+                </div>
+
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="receiveUpdates">
+                    <span class="checkmark"></span>
+                    I want to receive updates and promotional emails
+                  </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                  Create Account
+                </button>
+              </form>
+
+              <!-- Social Login Options -->
+              <div class="social-login">
+                <div class="divider">
+                  <span>Or sign up with</span>
+                </div>
+                <div class="social-buttons">
+                  <button class="social-btn google-btn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuNDMgMTAuMDlDNC40MyA5LjI5IDQuNiA4LjU0IDQuOTQgNy44NUw0LjQzIDcuODVWNy44NUgxLjIzQzAuNDQ0IDkuMzQgMCAxMC42NCAwIDEyVjEyQzAgMTMuMzYgMC40NDQgMTQuNjYgMS4yMyAxNi4xNUw0LjQzIDEyLjM5QzQuNDMgMTEuNiA0LjQzIDEwLjg0IDQuNDMgMTAuMDlaIiBmaWxsPSIjRkJCQzA0Ii8+CjxwYXRoIGQ9Ik0xMC4xIDEyLjA5QzEwLjEgMTEuNjQgMTAuMDUgMTEuMjEgOS45NiAxMC44SDEwLjFIMTguNTVDMTguNzYgMTEuNTkgMTguODcgMTIuNDMgMTguODcgMTMuMzNWMTMuMzNDMTguODcgMTcuMDggMTUuNzIgMjAgMTIgMjBWMjBDOS40MSAyMCA3LjE5IDE4LjQ5IDYuMTUgMTYuMTVMNC40MyAxMi4zOUM0LjQzIDExLjYgNC40MyAxMC44NCA0LjQzIDEwLjA5SDkuOTZDMTAuMDMgMTAuNzMgMTAuMSAxMS40IDEwLjEgMTIuMDlaIiBmaWxsPSIjMzRBODUzIi8+CjxwYXRoIGQ9Ik0xMC4xIDcuOTFDMTEuNjQgNy45MSAxMy4wMyA4LjQ2IDE0LjA5IDkuNDNMMTYuNjQgNi44OUMxNC44NSA1LjI5IDEyLjU0IDQuMzYgMTAuMSA0LjM2VjQuMzZDNi4zNSA0LjM2IDMuMjIgNi44NSAyLjI3IDEwLjM2TDQuNDMgMTIuMzlDNC40MyAxMS42IDQuNDMgMTAuODQgNC40MyAxMC4wOUg5Ljk2QzEwLjAzIDguOTcgMTAuMSA3LjkxIDEwLjEgNy45MVoiIGZpbGw9IiNFQTQzMzUiLz4KPHN2Zz4K" alt="Google">
+                    Continue with Google
+                  </button>
+                  <button class="social-btn facebook-btn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwQzIwIDQuNDggMTUuNTIgMCAxMCAwUzAgNC40OCAwIDEwQzAgMTQuOTkgMy42NiAxOS4xMiA4LjQ0IDE5LjlWMTIuODlINS45VjEwSDguNDRWNy43OUM4LjQ0IDUuNDMgOS45MyAzLjk5IDEyLjE4IDMuOTlDMTMuMjQgMy45OSAxNC4yNiA0LjA4IDE0LjI2IDQuMDhWNi40NEgxMy4xQzExLjkzIDYuNDQgMTEuNTYgNy4wMyAxMS41NiA3LjY4VjEwSDE0LjEzTDEzLjcyIDEyLjg5SDExLjU2VjE5LjlDMTYuMzQgMTkuMTIgMjAgMTQuOTkgMjAgMTBaIiBmaWxsPSIjMTg3N0YyIi8+Cjwvc3ZnPgo=" alt="Facebook">
+                    Continue with Facebook
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Log In Form -->
+            <div class="auth-form-container" id="login-form" style="display: none;">
+              <h2 class="form-title">Welcome Back</h2>
+              <p class="form-subtitle">Sign in to your account</p>
+
+              <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                  <label for="loginEmail" class="form-label">Email Address *</label>
+                  <input
+                    type="email"
+                    id="loginEmail"
+                    name="email"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="loginPassword" class="form-label">Password *</label>
+                  <div class="password-input-container">
+                    <input
+                      type="password"
+                      id="loginPassword"
+                      name="password"
+                      class="form-input"
+                      required
+                    />
+                    <button type="button" class="password-toggle" data-target="loginPassword">
+                      <span class="eye-icon">👁️</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="form-options">
+                  <label class="checkbox-label">
+                    <input type="checkbox" name="rememberMe">
+                    <span class="checkmark"></span>
+                    Remember me
+                  </label>
+                  <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  Log In
+                </button>
+              </form>
+
+              <!-- Social Login Options -->
+              <div class="social-login">
+                <div class="divider">
+                  <span>Or log in with</span>
+                </div>
+                <div class="social-buttons">
+                  <button class="social-btn google-btn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuNDMgMTAuMDlDNC40MyA5LjI5IDQuNiA4LjU0IDQuOTQgNy44NUw0LjQzIDcuODVWNy44NUgxLjIzQzAuNDQ0IDkuMzQgMCAxMC42NCAwIDEyVjEyQzAgMTMuMzYgMC40NDQgMTQuNjYgMS4yMyAxNi4xNUw0LjQzIDEyLjM5QzQuNDMgMTEuNiA0LjQzIDEwLjg0IDQuNDMgMTAuMDlaIiBmaWxsPSIjRkJCQzA0Ii8+CjxwYXRoIGQ9Ik0xMC4xIDEyLjA5QzEwLjEgMTEuNjQgMTAuMDUgMTEuMjEgOS45NiAxMC44SDEwLjFIMTguNTVDMTguNzYgMTEuNTkgMTguODcgMTIuNDMgMTguODcgMTMuMzNWMTMuMzNDMTguODcgMTcuMDggMTUuNzIgMjAgMTIgMjBWMjBDOS40MSAyMCA3LjE5IDE4LjQ5IDYuMTUgMTYuMTVMNC40MyAxMi4zOUM0LjQzIDExLjYgNC40MyAxMC44NCA0LjQzIDEwLjA5SDkuOTZDMTAuMDMgMTAuNzMgMTAuMSAxMS40IDEwLjEgMTIuMDlaIiBmaWxsPSIjMzRBODUzIi8+CjxwYXRoIGQ9Ik0xMC4xIDcuOTFDMTEuNjQgNy45MSAxMy4wMyA4LjQ2IDE0LjA5IDkuNDNMMTYuNjQgNi44OUMxNC44NSA1LjI5IDEyLjU0IDQuMzYgMTAuMSA0LjM2VjQuMzZDNi4zNSA0LjM2IDMuMjIgNi44NSAyLjI3IDEwLjM2TDQuNDMgMTIuMzlDNC40MyAxMS42IDQuNDMgMTAuODQgNC40MyAxMC4wOUg5Ljk2QzEwLjAzIDguOTcgMTAuMSA3LjkxIDEwLjEgNy45MVoiIGZpbGw9IiNFQTQzMzUiLz4KPHN2Zz4K" alt="Google">
+                    Continue with Google
+                  </button>
+                  <button class="social-btn facebook-btn">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTIwIDEwQzIwIDQuNDggMTUuNTIgMCAxMCAwUzAgNC40OCAwIDEwQzAgMTQuOTkgMy42NiAxOS4xMiA4LjQ0IDE5LjlWMTIuODlINS45VjEwSDguNDRWNy43OUM4LjQ0IDUuNDMgOS45MyAzLjk5IDEyLjE4IDMuOTlDMTMuMjQgMy45OSAxNC4yNiA0LjA4IDE0LjI2IDQuMDhWNi40NEgxMy4xQzExLjkzIDYuNDQgMTEuNTYgNy4wMyAxMS41NiA7LjY4VjEwSDE0LjEzTDEzLjcyIDEyLjg5SDExLjU2VjE5LjlDMTYuMzQgMTkuMTIgMjAgMTQuOTkgMjAgMTBaIiBmaWxsPSIjMTg3N0YyIi8+Cjwvc3ZnPgo=" alt="Facebook">
+                    Continue with Facebook
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Section -->
+      <footer class="footer-section">
+        <!-- Title and Social Media Logos -->
+        <div class="footer-header">
+          <h2 class="follow-us-title">Follow us! We're friendly:</h2>
+          <div class="social-media-logos">
+            <a href="https://facebook.com" target="_blank">
+              <img src="/HomeAssist/assets/fb.svg" alt="Facebook" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://twitter.com" target="_blank">
+              <img src="/HomeAssist/assets/x.svg" alt="Twitter" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://instagram.com" target="_blank">
+              <img src="/HomeAssist/assets/insta.svg" alt="Instagram" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://linkedin.com" target="_blank">
+              <img src="/HomeAssist/assets/in.svg" alt="LinkedIn" class="social-logo" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Columns -->
+        <div class="footer-columns">
+          <!-- Column 1: Discover -->
+          <div class="footer-column">
+            <h3 class="column-title">Discover</h3>
+            <ul class="column-links">
+              <li><a href="#">Become a Tasker</a></li>
+              <li><a href="#">Services By City</a></li>
+              <li><a href="#">Services Nearby</a></li>
+              <li><a href="#">All Services</a></li>
+              <li><a href="#">Elite Taskers</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="footer-column">
+            <h3 class="column-title">Company</h3>
+            <ul class="column-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partner with HomeAssist</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">HomeAssist for Good</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Terms & Privacy</a></li>
+              <li><a href="#">Do not Sell My Personal Information</a></li>
+              <li><a href="#">Legal</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Download our app -->
+          <div class="footer-column">
+            <h3 class="column-title">Download our app</h3>
+            <p class="app-description">
+              Tackle your to-do list wherever you are with our mobile app.
+            </p>
+            <div class="app-download-buttons">
+              <a href="https://appstore.com" target="_blank">
+                <img src="/HomeAssist/assets/AppStore.svg" alt="App Store" class="app-logo" />
+              </a>
+              <a href="https://play.google.com" target="_blank">
+                <img src="/HomeAssist/assets/GooglePlay.svg" alt="Google Play" class="app-logo" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- JavaScript for authentication functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu functionality
+        initializeMobileMenu();
+        
+        // Tab switching functionality
+        initializeTabSwitching();
+        
+        // Password toggle functionality
+        initializePasswordToggle();
+        
+        // Account type switching
+        initializeAccountTypeSwitching();
+        
+        // Form validation and submission
+        initializeFormHandling();
+        
+        // Phone number formatting
+        initializePhoneFormatting();
+      });
+
+      // Mobile menu functionality
+      function initializeMobileMenu() {
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+        const navContainer = document.getElementById('nav-container');
+
+        if (hamburgerMenu && navContainer) {
+          hamburgerMenu.addEventListener('click', function() {
+            navContainer.classList.toggle('active');
+            const spans = hamburgerMenu.querySelectorAll('span');
+            spans.forEach(span => span.classList.toggle('active'));
+          });
+
+          document.addEventListener('click', function(event) {
+            if (!hamburgerMenu.contains(event.target) && !navContainer.contains(event.target)) {
+              navContainer.classList.remove('active');
+              const spans = hamburgerMenu.querySelectorAll('span');
+              spans.forEach(span => span.classList.remove('active'));
+            }
+          });
+
+          const navLinks = document.querySelectorAll('.nav-links a');
+          navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+              navContainer.classList.remove('active');
+              const spans = hamburgerMenu.querySelectorAll('span');
+              spans.forEach(span => span.classList.remove('active'));
+            });
+          });
+        }
+      }
+
+      // Tab switching functionality
+      function initializeTabSwitching() {
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const signupForm = document.getElementById('signup-form');
+        const loginForm = document.getElementById('login-form');
+
+        tabBtns.forEach(btn => {
+          btn.addEventListener('click', function() {
+            const targetTab = this.getAttribute('data-tab');
+            
+            // Update active tab button
+            tabBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide forms
+            if (targetTab === 'signup') {
+              signupForm.style.display = 'block';
+              loginForm.style.display = 'none';
+            } else {
+              signupForm.style.display = 'none';
+              loginForm.style.display = 'block';
+            }
+          });
+        });
+      }
+
+      // Password toggle functionality
+      function initializePasswordToggle() {
+        const passwordToggles = document.querySelectorAll('.password-toggle');
+        
+        passwordToggles.forEach(toggle => {
+          toggle.addEventListener('click', function() {
+            const targetId = this.getAttribute('data-target');
+            const passwordInput = document.getElementById(targetId);
+            const eyeIcon = this.querySelector('.eye-icon');
+            
+            if (passwordInput.type === 'password') {
+              passwordInput.type = 'text';
+              eyeIcon.textContent = '🙈';
+            } else {
+              passwordInput.type = 'password';
+              eyeIcon.textContent = '👁️';
+            }
+          });
+        });
+      }
+
+      // Account type switching
+      function initializeAccountTypeSwitching() {
+        const accountTypeRadios = document.querySelectorAll('input[name="accountType"]');
+        const taskerFields = document.querySelector('.tasker-fields');
+        
+        accountTypeRadios.forEach(radio => {
+          radio.addEventListener('change', function() {
+            if (this.value === 'tasker') {
+              taskerFields.style.display = 'block';
+            } else {
+              taskerFields.style.display = 'none';
+            }
+          });
+        });
+      }
+
+      // Form handling
+      function initializeFormHandling() {
+        const signupForm = document.getElementById('signupForm');
+        const loginForm = document.getElementById('loginForm');
+
+        if (signupForm) {
+          signupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleSignupSubmission();
+          });
+        }
+
+        if (loginForm) {
+          loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleLoginSubmission();
+          });
+        }
+      }
+
+      // Phone number formatting
+      function initializePhoneFormatting() {
+        const phoneInput = document.getElementById('signupPhone');
+        if (phoneInput) {
+          phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+              value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+              value = value.replace(/(\d{3})(\d{0,3})/, '($1) $2');
+            }
+            e.target.value = value;
+          });
+        }
+      }
+
+      // Handle signup submission
+      function handleSignupSubmission() {
+        const form = document.getElementById('signupForm');
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('.submit-btn');
+        
+        // Basic validation
+        const password = formData.get('password');
+        const confirmPassword = formData.get('confirmPassword');
+        
+        if (password !== confirmPassword) {
+          showNotification('Passwords do not match!', 'error');
+          return;
+        }
+        
+        if (password.length < 8) {
+          showNotification('Password must be at least 8 characters long!', 'error');
+          return;
+        }
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Creating Account...';
+        
+        // Simulate API call
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Create Account';
+          
+          showNotification('Account created successfully! Please check your email for verification.', 'success');
+          
+          // Redirect to homepage after 2 seconds
+          setTimeout(() => {
+            window.location.href = '/HomeAssist/homepage.html';
+          }, 2000);
+        }, 2000);
+      }
+
+      // Handle login submission
+      function handleLoginSubmission() {
+        const form = document.getElementById('loginForm');
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('.submit-btn');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Logging in...';
+        
+        // Simulate API call
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Log In';
+          
+          showNotification('Login successful! Welcome back.', 'success');
+          
+          // Redirect to homepage after 1 second
+          setTimeout(() => {
+            window.location.href = '/HomeAssist/homepage.html';
+          }, 1000);
+        }, 1500);
+      }
+
+      // Show notification
+      function showNotification(message, type = 'info') {
+        const existingNotification = document.querySelector('.notification');
+        if (existingNotification) {
+          existingNotification.remove();
+        }
+
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+          <span>${message}</span>
+          <button class="notification-close">&times;</button>
+        `;
+
+        notification.style.cssText = `
+          position: fixed;
+          top: 90px;
+          right: 20px;
+          background: ${type === 'error' ? '#ef4444' : '#10b981'};
+          color: white;
+          padding: 15px 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          z-index: 1001;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          max-width: 350px;
+          animation: slideIn 0.3s ease;
+        `;
+
+        document.body.appendChild(notification);
+
+        const closeBtn = notification.querySelector('.notification-close');
+        closeBtn.addEventListener('click', () => {
+          notification.remove();
+        });
+
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.remove();
+          }
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>

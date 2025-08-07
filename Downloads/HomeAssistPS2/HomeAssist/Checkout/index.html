@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of Tab Favicon svg & Stylesheet -->
+    <title>Book Service - HomeAssist</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/HomeAssist/assets/tab_logo.svg"
+    />
+    <link rel="stylesheet" href="/HomeAssist/Checkout/styles.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="navbar">
+        <!-- Logo SVG HomeAssist -->
+        <a href="/HomeAssist/homepage.html" class="logo">
+          <img
+            src="/HomeAssist/assets/home-assist-logo.svg"
+            alt="HomeAssist Logo"
+          />
+        </a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="nav-container" id="nav-container">
+          <ul class="nav-links">
+            <li><a href="/HomeAssist/homepage.html">Home</a></li>
+            <li><a href="/HomeAssist/Servicepage/index.html">Services</a></li>
+            <li><a href="/HomeAssist/SignupLogin/signup.html">Sign up / Log in</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Service Details Section -->
+        <section class="service-details">
+          <div class="service-header">
+            <h1 class="service-title" id="serviceTitle">General Service</h1>
+            <p class="service-description" id="serviceDescription">
+              Professional service to help with your home tasks
+            </p>
+          </div>
+
+          <!-- Service Image -->
+          <div class="service-image-container">
+            <img
+              src="/HomeAssist/assets/ServiceTab1.jpg"
+              alt="Service Image"
+              class="service-image"
+              id="serviceImage"
+            />
+          </div>
+        </section>
+
+        <!-- Booking Form Section -->
+        <section class="booking-section">
+          <div class="container">
+            <h2 class="section-title">Book Your Service</h2>
+            
+            <form class="booking-form" id="bookingForm">
+              <!-- Personal Information -->
+              <div class="form-section">
+                <h3 class="form-section-title">Personal Information</h3>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName" class="form-label">First Name *</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="lastName" class="form-label">Last Name *</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email Address *</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number *</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Service Details -->
+              <div class="form-section">
+                <h3 class="form-section-title">Service Details</h3>
+                
+                <div class="form-group">
+                  <label for="serviceType" class="form-label">Service Type *</label>
+                  <select id="serviceType" name="serviceType" class="form-input" required>
+                    <option value="">Select a service</option>
+                    <option value="furniture-assembly">Furniture Assembly</option>
+                    <option value="tv-mounting">TV Mounting</option>
+                    <option value="moving-help">Moving Help</option>
+                    <option value="house-cleaning">House Cleaning</option>
+                    <option value="home-repairs">Home Repairs</option>
+                    <option value="painting">Painting</option>
+                    <option value="outdoor-help">Outdoor Help</option>
+                    <option value="trending-services">Trending Services</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="serviceDate" class="form-label">Preferred Date *</label>
+                  <input
+                    type="date"
+                    id="serviceDate"
+                    name="serviceDate"
+                    class="form-input"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="serviceTime" class="form-label">Preferred Time *</label>
+                    <select id="serviceTime" name="serviceTime" class="form-input" required>
+                      <option value="">Select time</option>
+                      <option value="8:00-10:00">8:00 AM - 10:00 AM</option>
+                      <option value="10:00-12:00">10:00 AM - 12:00 PM</option>
+                      <option value="12:00-14:00">12:00 PM - 2:00 PM</option>
+                      <option value="14:00-16:00">2:00 PM - 4:00 PM</option>
+                      <option value="16:00-18:00">4:00 PM - 6:00 PM</option>
+                      <option value="18:00-20:00">6:00 PM - 8:00 PM</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="duration" class="form-label">Estimated Duration</label>
+                    <select id="duration" name="duration" class="form-input">
+                      <option value="">Select duration</option>
+                      <option value="1">1 hour</option>
+                      <option value="2">2 hours</option>
+                      <option value="3">3 hours</option>
+                      <option value="4">4 hours</option>
+                      <option value="5+">5+ hours</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Address Information -->
+              <div class="form-section">
+                <h3 class="form-section-title">Service Address</h3>
+                
+                <div class="form-group">
+                  <label for="address" class="form-label">Street Address *</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    class="form-input"
+                    placeholder="Enter your full address"
+                    required
+                  />
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="city" class="form-label">City *</label>
+                    <input
+                      type="text"
+                      id="city"
+                      name="city"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="state" class="form-label">State *</label>
+                    <input
+                      type="text"
+                      id="state"
+                      name="state"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="zipCode" class="form-label">ZIP Code *</label>
+                    <input
+                      type="text"
+                      id="zipCode"
+                      name="zipCode"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional Information -->
+              <div class="form-section">
+                <h3 class="form-section-title">Additional Information</h3>
+                
+                <div class="form-group">
+                  <label for="specialInstructions" class="form-label">
+                    Special Instructions or Requirements
+                  </label>
+                  <textarea
+                    id="specialInstructions"
+                    name="specialInstructions"
+                    class="form-textarea"
+                    rows="4"
+                    placeholder="Please provide any special instructions, requirements, or details about the service..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <!-- Pricing Information -->
+              <div class="pricing-section">
+                <h3 class="pricing-title">Pricing Information</h3>
+                <div class="pricing-details">
+                  <div class="pricing-item">
+                    <span class="pricing-label">Base Service Fee:</span>
+                    <span class="pricing-value" id="basePrice">$50.00</span>
+                  </div>
+                  <div class="pricing-item">
+                    <span class="pricing-label">Service Fee (15%):</span>
+                    <span class="pricing-value" id="serviceFee">$7.50</span>
+                  </div>
+                  <div class="pricing-item total">
+                    <span class="pricing-label">Total:</span>
+                    <span class="pricing-value" id="totalPrice">$57.50</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="submit-section">
+                <button type="submit" class="submit-btn">
+                  Book Service Now
+                </button>
+                <p class="terms-text">
+                  By booking this service, you agree to our 
+                  <a href="#" class="terms-link">Terms of Service</a> and 
+                  <a href="#" class="terms-link">Privacy Policy</a>.
+                </p>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer Section -->
+      <footer class="footer-section">
+        <!-- Title and Social Media Logos -->
+        <div class="footer-header">
+          <h2 class="follow-us-title">Follow us! We're friendly:</h2>
+          <div class="social-media-logos">
+            <a href="https://facebook.com" target="_blank">
+              <img src="/HomeAssist/assets/fb.svg" alt="Facebook" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://twitter.com" target="_blank">
+              <img src="/HomeAssist/assets/x.svg" alt="Twitter" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://instagram.com" target="_blank">
+              <img src="/HomeAssist/assets/insta.svg" alt="Instagram" class="social-logo" />
+            </a>
+            <span class="separator"></span>
+            <a href="https://linkedin.com" target="_blank">
+              <img src="/HomeAssist/assets/in.svg" alt="LinkedIn" class="social-logo" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Columns -->
+        <div class="footer-columns">
+          <!-- Column 1: Discover -->
+          <div class="footer-column">
+            <h3 class="column-title">Discover</h3>
+            <ul class="column-links">
+              <li><a href="#">Become a Tasker</a></li>
+              <li><a href="#">Services By City</a></li>
+              <li><a href="#">Services Nearby</a></li>
+              <li><a href="#">All Services</a></li>
+              <li><a href="#">Elite Taskers</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="footer-column">
+            <h3 class="column-title">Company</h3>
+            <ul class="column-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partner with HomeAssist</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">HomeAssist for Good</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Terms & Privacy</a></li>
+              <li><a href="#">Do not Sell My Personal Information</a></li>
+              <li><a href="#">Legal</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Download our app -->
+          <div class="footer-column">
+            <h3 class="column-title">Download our app</h3>
+            <p class="app-description">
+              Tackle your to-do list wherever you are with our mobile app.
+            </p>
+            <div class="app-download-buttons">
+              <a href="https://appstore.com" target="_blank">
+                <img src="/HomeAssist/assets/AppStore.svg" alt="App Store" class="app-logo" />
+              </a>
+              <a href="https://play.google.com" target="_blank">
+                <img src="/HomeAssist/assets/GooglePlay.svg" alt="Google Play" class="app-logo" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Include JavaScript -->
+    <script src="/HomeAssist/Checkout/script.js"></script>
+  </body>
+</html>
