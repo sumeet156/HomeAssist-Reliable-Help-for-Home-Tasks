@@ -44,7 +44,9 @@
           <ul class="nav-links">
             <li><a href="/HomeAssist/homepage.html">Home</a></li>
             <li><a href="/HomeAssist/Servicepage/index.html">Services</a></li>
-            <li><a href="/HomeAssist/SignupLogin/signup.html">Sign up / Log in</a></li>
+            <li>
+              <a href="/HomeAssist/SignupLogin/signup.html">Sign up / Log in</a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -75,15 +77,17 @@
         <section class="booking-section">
           <div class="container">
             <h2 class="section-title">Book Your Service</h2>
-            
+
             <form class="booking-form" id="bookingForm">
               <!-- Personal Information -->
               <div class="form-section">
                 <h3 class="form-section-title">Personal Information</h3>
-                
+
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="firstName" class="form-label">First Name *</label>
+                    <label for="firstName" class="form-label"
+                      >First Name *</label
+                    >
                     <input
                       type="text"
                       id="firstName"
@@ -92,7 +96,7 @@
                       required
                     />
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="lastName" class="form-label">Last Name *</label>
                     <input
@@ -107,7 +111,9 @@
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="email" class="form-label">Email Address *</label>
+                    <label for="email" class="form-label"
+                      >Email Address *</label
+                    >
                     <input
                       type="email"
                       id="email"
@@ -116,7 +122,7 @@
                       required
                     />
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="phone" class="form-label">Phone Number *</label>
                     <input
@@ -133,12 +139,21 @@
               <!-- Service Details -->
               <div class="form-section">
                 <h3 class="form-section-title">Service Details</h3>
-                
+
                 <div class="form-group">
-                  <label for="serviceType" class="form-label">Service Type *</label>
-                  <select id="serviceType" name="serviceType" class="form-input" required>
+                  <label for="serviceType" class="form-label"
+                    >Service Type *</label
+                  >
+                  <select
+                    id="serviceType"
+                    name="serviceType"
+                    class="form-input"
+                    required
+                  >
                     <option value="">Select a service</option>
-                    <option value="furniture-assembly">Furniture Assembly</option>
+                    <option value="furniture-assembly">
+                      Furniture Assembly
+                    </option>
                     <option value="tv-mounting">TV Mounting</option>
                     <option value="moving-help">Moving Help</option>
                     <option value="house-cleaning">House Cleaning</option>
@@ -150,7 +165,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="serviceDate" class="form-label">Preferred Date *</label>
+                  <label for="serviceDate" class="form-label"
+                    >Preferred Date *</label
+                  >
                   <input
                     type="date"
                     id="serviceDate"
@@ -162,8 +179,15 @@
 
                 <div class="form-row">
                   <div class="form-group">
-                    <label for="serviceTime" class="form-label">Preferred Time *</label>
-                    <select id="serviceTime" name="serviceTime" class="form-input" required>
+                    <label for="serviceTime" class="form-label"
+                      >Preferred Time *</label
+                    >
+                    <select
+                      id="serviceTime"
+                      name="serviceTime"
+                      class="form-input"
+                      required
+                    >
                       <option value="">Select time</option>
                       <option value="8:00-10:00">8:00 AM - 10:00 AM</option>
                       <option value="10:00-12:00">10:00 AM - 12:00 PM</option>
@@ -173,9 +197,11 @@
                       <option value="18:00-20:00">6:00 PM - 8:00 PM</option>
                     </select>
                   </div>
-                  
+
                   <div class="form-group">
-                    <label for="duration" class="form-label">Estimated Duration</label>
+                    <label for="duration" class="form-label"
+                      >Estimated Duration</label
+                    >
                     <select id="duration" name="duration" class="form-input">
                       <option value="">Select duration</option>
                       <option value="1">1 hour</option>
@@ -191,9 +217,11 @@
               <!-- Address Information -->
               <div class="form-section">
                 <h3 class="form-section-title">Service Address</h3>
-                
+
                 <div class="form-group">
-                  <label for="address" class="form-label">Street Address *</label>
+                  <label for="address" class="form-label"
+                    >Street Address *</label
+                  >
                   <input
                     type="text"
                     id="address"
@@ -215,7 +243,7 @@
                       required
                     />
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="state" class="form-label">State *</label>
                     <input
@@ -226,7 +254,7 @@
                       required
                     />
                   </div>
-                  
+
                   <div class="form-group">
                     <label for="zipCode" class="form-label">ZIP Code *</label>
                     <input
@@ -243,7 +271,7 @@
               <!-- Additional Information -->
               <div class="form-section">
                 <h3 class="form-section-title">Additional Information</h3>
-                
+
                 <div class="form-group">
                   <label for="specialInstructions" class="form-label">
                     Special Instructions or Requirements
@@ -283,8 +311,8 @@
                   Book Service Now
                 </button>
                 <p class="terms-text">
-                  By booking this service, you agree to our 
-                  <a href="#" class="terms-link">Terms of Service</a> and 
+                  By booking this service, you agree to our
+                  <a href="#" class="terms-link">Terms of Service</a> and
                   <a href="#" class="terms-link">Privacy Policy</a>.
                 </p>
               </div>
@@ -300,19 +328,35 @@
           <h2 class="follow-us-title">Follow us! We're friendly:</h2>
           <div class="social-media-logos">
             <a href="https://facebook.com" target="_blank">
-              <img src="/HomeAssist/assets/fb.svg" alt="Facebook" class="social-logo" />
+              <img
+                src="/HomeAssist/assets/fb.svg"
+                alt="Facebook"
+                class="social-logo"
+              />
             </a>
             <span class="separator"></span>
             <a href="https://twitter.com" target="_blank">
-              <img src="/HomeAssist/assets/x.svg" alt="Twitter" class="social-logo" />
+              <img
+                src="/HomeAssist/assets/x.svg"
+                alt="Twitter"
+                class="social-logo"
+              />
             </a>
             <span class="separator"></span>
             <a href="https://instagram.com" target="_blank">
-              <img src="/HomeAssist/assets/insta.svg" alt="Instagram" class="social-logo" />
+              <img
+                src="/HomeAssist/assets/insta.svg"
+                alt="Instagram"
+                class="social-logo"
+              />
             </a>
             <span class="separator"></span>
             <a href="https://linkedin.com" target="_blank">
-              <img src="/HomeAssist/assets/in.svg" alt="LinkedIn" class="social-logo" />
+              <img
+                src="/HomeAssist/assets/in.svg"
+                alt="LinkedIn"
+                class="social-logo"
+              />
             </a>
           </div>
         </div>
@@ -356,10 +400,18 @@
             </p>
             <div class="app-download-buttons">
               <a href="https://appstore.com" target="_blank">
-                <img src="/HomeAssist/assets/AppStore.svg" alt="App Store" class="app-logo" />
+                <img
+                  src="/HomeAssist/assets/AppStore.svg"
+                  alt="App Store"
+                  class="app-logo"
+                />
               </a>
               <a href="https://play.google.com" target="_blank">
-                <img src="/HomeAssist/assets/GooglePlay.svg" alt="Google Play" class="app-logo" />
+                <img
+                  src="/HomeAssist/assets/GooglePlay.svg"
+                  alt="Google Play"
+                  class="app-logo"
+                />
               </a>
             </div>
           </div>

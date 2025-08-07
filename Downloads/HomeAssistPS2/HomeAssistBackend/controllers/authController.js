@@ -1,8 +1,11 @@
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const User = require('../models/User');
-const { generateToken } = require('../utils/generateToken');
-const { sendVerificationEmail, sendPasswordResetEmail } = require('../utils/emailService');
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
+const User = require("../models/User");
+const { generateToken } = require("../utils/generateToken");
+const {
+  sendVerificationEmail,
+  sendPasswordResetEmail,
+} = require("../utils/emailService");
 
 // Register new user
 const register = async (req, res) => {
@@ -18,7 +21,7 @@ const register = async (req, res) => {
       city,
       state,
       zipCode,
-      skillsDescription
+      skillsDescription,
     } = req.body;
 
     // Check if user already exists
@@ -26,7 +29,7 @@ const register = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({
         success: false,
-        message: 'User already exists with this email'
+        message: "User already exists with this email",
       });
     }
 
@@ -34,7 +37,7 @@ const register = async (req, res) => {
     if (password.length < 8) {
       return res.status(400).json({
         success: false,
-        message: 'Password must be at least 8 characters long'
+        message: "Password must be at least 8 characters long",
       });
     }
 
@@ -45,11 +48,11 @@ const register = async (req, res) => {
       email,
       phone,
       password,
-      accountType: accountType || 'customer'
+      accountType: accountType || "customer",
     };
 
     // Add additional fields for taskers
-    if (accountType === 'tasker') {
+    if (accountType === "tasker") {
       userData.address = address;
       userData.city = city;
       userData.state = state;
@@ -69,7 +72,7 @@ const register = async (req, res) => {
     try {
       await sendVerificationEmail(user.email, user.firstName, token);
     } catch (emailError) {
-      console.error('Failed to send verification email:', emailError);
+      console.error("Failed to send verification email:", emailError);
       // Don't fail registration if email fails
     }
 
@@ -79,19 +82,19 @@ const register = async (req, res) => {
 
     res.status(201).json({
       success: true,
-      message: 'User registered successfully. Please check your email for verification.',
+      message:
+        "User registered successfully. Please check your email for verification.",
       data: {
         user: userResponse,
-        token
-      }
+        token,
+      },
     });
-
   } catch (error) {
-    console.error('Registration error:', error);
+    console.error("Registration error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error during registration',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error during registration",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -105,16 +108,16 @@ const login = async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide email and password'
+        message: "Please provide email and password",
       });
     }
 
     // Find user by email
-    const user = await User.findOne({ email }).select('+password');
+    const user = await User.findOne({ email }).select("+password");
     if (!user) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials'
+        message: "Invalid credentials",
       });
     }
 
@@ -123,7 +126,7 @@ const login = async (req, res) => {
     if (!isPasswordCorrect) {
       return res.status(401).json({
         success: false,
-        message: 'Invalid credentials'
+        message: "Invalid credentials",
       });
     }
 
@@ -131,7 +134,7 @@ const login = async (req, res) => {
     if (!user.isActive) {
       return res.status(401).json({
         success: false,
-        message: 'Account has been deactivated'
+        message: "Account has been deactivated",
       });
     }
 
@@ -148,19 +151,18 @@ const login = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Login successful',
+      message: "Login successful",
       data: {
         user: userResponse,
-        token
-      }
+        token,
+      },
     });
-
   } catch (error) {
-    console.error('Login error:', error);
+    console.error("Login error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error during login',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error during login",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -172,21 +174,20 @@ const getProfile = async (req, res) => {
     if (!user) {
       return res.status(404).json({
         success: false,
-        message: 'User not found'
+        message: "User not found",
       });
     }
 
     res.json({
       success: true,
-      data: { user }
+      data: { user },
     });
-
   } catch (error) {
-    console.error('Get profile error:', error);
+    console.error("Get profile error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error retrieving profile',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error retrieving profile",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -202,31 +203,29 @@ const updateProfile = async (req, res) => {
     delete updateData.email;
     delete updateData._id;
 
-    const user = await User.findByIdAndUpdate(
-      userId,
-      updateData,
-      { new: true, runValidators: true }
-    );
+    const user = await User.findByIdAndUpdate(userId, updateData, {
+      new: true,
+      runValidators: true,
+    });
 
     if (!user) {
       return res.status(404).json({
         success: false,
-        message: 'User not found'
+        message: "User not found",
       });
     }
 
     res.json({
       success: true,
-      message: 'Profile updated successfully',
-      data: { user }
+      message: "Profile updated successfully",
+      data: { user },
     });
-
   } catch (error) {
-    console.error('Update profile error:', error);
+    console.error("Update profile error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error updating profile',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error updating profile",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -241,32 +240,34 @@ const changePassword = async (req, res) => {
     if (!currentPassword || !newPassword) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide current and new password'
+        message: "Please provide current and new password",
       });
     }
 
     if (newPassword.length < 8) {
       return res.status(400).json({
         success: false,
-        message: 'New password must be at least 8 characters long'
+        message: "New password must be at least 8 characters long",
       });
     }
 
     // Find user with password
-    const user = await User.findById(userId).select('+password');
+    const user = await User.findById(userId).select("+password");
     if (!user) {
       return res.status(404).json({
         success: false,
-        message: 'User not found'
+        message: "User not found",
       });
     }
 
     // Check current password
-    const isCurrentPasswordCorrect = await user.comparePassword(currentPassword);
+    const isCurrentPasswordCorrect = await user.comparePassword(
+      currentPassword
+    );
     if (!isCurrentPasswordCorrect) {
       return res.status(400).json({
         success: false,
-        message: 'Current password is incorrect'
+        message: "Current password is incorrect",
       });
     }
 
@@ -276,15 +277,14 @@ const changePassword = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Password changed successfully'
+      message: "Password changed successfully",
     });
-
   } catch (error) {
-    console.error('Change password error:', error);
+    console.error("Change password error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error changing password',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error changing password",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -297,7 +297,7 @@ const forgotPassword = async (req, res) => {
     if (!email) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide email address'
+        message: "Please provide email address",
       });
     }
 
@@ -305,12 +305,12 @@ const forgotPassword = async (req, res) => {
     if (!user) {
       return res.status(404).json({
         success: false,
-        message: 'No user found with this email address'
+        message: "No user found with this email address",
       });
     }
 
     // Generate reset token
-    const resetToken = generateToken(user._id, '1h');
+    const resetToken = generateToken(user._id, "1h");
 
     // Save reset token to user (in a real app, you might store this in the database)
     user.passwordResetToken = resetToken;
@@ -320,29 +320,28 @@ const forgotPassword = async (req, res) => {
     // Send reset email
     try {
       await sendPasswordResetEmail(user.email, user.firstName, resetToken);
-      
+
       res.json({
         success: true,
-        message: 'Password reset email sent successfully'
+        message: "Password reset email sent successfully",
       });
     } catch (emailError) {
-      console.error('Failed to send reset email:', emailError);
+      console.error("Failed to send reset email:", emailError);
       user.passwordResetToken = undefined;
       user.passwordResetExpires = undefined;
       await user.save();
 
       res.status(500).json({
         success: false,
-        message: 'Failed to send reset email. Please try again.'
+        message: "Failed to send reset email. Please try again.",
       });
     }
-
   } catch (error) {
-    console.error('Forgot password error:', error);
+    console.error("Forgot password error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error processing forgot password request',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error processing forgot password request",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -355,14 +354,14 @@ const resetPassword = async (req, res) => {
     if (!token || !newPassword) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide token and new password'
+        message: "Please provide token and new password",
       });
     }
 
     if (newPassword.length < 8) {
       return res.status(400).json({
         success: false,
-        message: 'New password must be at least 8 characters long'
+        message: "New password must be at least 8 characters long",
       });
     }
 
@@ -373,7 +372,7 @@ const resetPassword = async (req, res) => {
     } catch (jwtError) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid or expired reset token'
+        message: "Invalid or expired reset token",
       });
     }
 
@@ -381,13 +380,13 @@ const resetPassword = async (req, res) => {
     const user = await User.findOne({
       _id: decoded.id,
       passwordResetToken: token,
-      passwordResetExpires: { $gt: Date.now() }
+      passwordResetExpires: { $gt: Date.now() },
     });
 
     if (!user) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid or expired reset token'
+        message: "Invalid or expired reset token",
       });
     }
 
@@ -399,15 +398,14 @@ const resetPassword = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Password reset successfully'
+      message: "Password reset successfully",
     });
-
   } catch (error) {
-    console.error('Reset password error:', error);
+    console.error("Reset password error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error resetting password',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error resetting password",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -420,7 +418,7 @@ const verifyEmail = async (req, res) => {
     if (!token) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide verification token'
+        message: "Please provide verification token",
       });
     }
 
@@ -431,7 +429,7 @@ const verifyEmail = async (req, res) => {
     } catch (jwtError) {
       return res.status(400).json({
         success: false,
-        message: 'Invalid or expired verification token'
+        message: "Invalid or expired verification token",
       });
     }
 
@@ -440,14 +438,14 @@ const verifyEmail = async (req, res) => {
     if (!user) {
       return res.status(404).json({
         success: false,
-        message: 'User not found'
+        message: "User not found",
       });
     }
 
     if (user.isEmailVerified) {
       return res.status(400).json({
         success: false,
-        message: 'Email already verified'
+        message: "Email already verified",
       });
     }
 
@@ -456,15 +454,14 @@ const verifyEmail = async (req, res) => {
 
     res.json({
       success: true,
-      message: 'Email verified successfully'
+      message: "Email verified successfully",
     });
-
   } catch (error) {
-    console.error('Email verification error:', error);
+    console.error("Email verification error:", error);
     res.status(500).json({
       success: false,
-      message: 'Server error verifying email',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined
+      message: "Server error verifying email",
+      error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
 };
@@ -477,5 +474,5 @@ module.exports = {
   changePassword,
   forgotPassword,
   resetPassword,
-  verifyEmail
+  verifyEmail,
 };

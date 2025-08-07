@@ -1,15 +1,15 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require("nodemailer");
 
 // Create transporter
 const createTransporter = () => {
   return nodemailer.createTransporter({
-    host: process.env.EMAIL_HOST || 'smtp.gmail.com',
+    host: process.env.EMAIL_HOST || "smtp.gmail.com",
     port: process.env.EMAIL_PORT || 587,
     secure: false, // Use TLS
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
-    }
+      pass: process.env.EMAIL_PASS,
+    },
   });
 };
 
@@ -17,13 +17,13 @@ const createTransporter = () => {
 const sendVerificationEmail = async (email, firstName, token) => {
   try {
     const transporter = createTransporter();
-    
+
     const verificationUrl = `${process.env.FRONTEND_URL}/verify-email?token=${token}`;
-    
+
     const mailOptions = {
       from: `"HomeAssist" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Welcome to HomeAssist - Please Verify Your Email',
+      subject: "Welcome to HomeAssist - Please Verify Your Email",
       html: `
         <!DOCTYPE html>
         <html>
@@ -122,15 +122,14 @@ const sendVerificationEmail = async (email, firstName, token) => {
           </div>
         </body>
         </html>
-      `
+      `,
     };
 
     await transporter.sendMail(mailOptions);
     console.log(`Verification email sent to ${email}`);
-    
   } catch (error) {
-    console.error('Error sending verification email:', error);
-    throw new Error('Failed to send verification email');
+    console.error("Error sending verification email:", error);
+    throw new Error("Failed to send verification email");
   }
 };
 
@@ -138,13 +137,13 @@ const sendVerificationEmail = async (email, firstName, token) => {
 const sendPasswordResetEmail = async (email, firstName, token) => {
   try {
     const transporter = createTransporter();
-    
+
     const resetUrl = `${process.env.FRONTEND_URL}/reset-password?token=${token}`;
-    
+
     const mailOptions = {
       from: `"HomeAssist" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'HomeAssist - Password Reset Request',
+      subject: "HomeAssist - Password Reset Request",
       html: `
         <!DOCTYPE html>
         <html>
@@ -251,27 +250,30 @@ const sendPasswordResetEmail = async (email, firstName, token) => {
           </div>
         </body>
         </html>
-      `
+      `,
     };
 
     await transporter.sendMail(mailOptions);
     console.log(`Password reset email sent to ${email}`);
-    
   } catch (error) {
-    console.error('Error sending password reset email:', error);
-    throw new Error('Failed to send password reset email');
+    console.error("Error sending password reset email:", error);
+    throw new Error("Failed to send password reset email");
   }
 };
 
 // Send booking confirmation email
-const sendBookingConfirmationEmail = async (email, firstName, bookingDetails) => {
+const sendBookingConfirmationEmail = async (
+  email,
+  firstName,
+  bookingDetails
+) => {
   try {
     const transporter = createTransporter();
-    
+
     const mailOptions = {
       from: `"HomeAssist" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Booking Confirmation - HomeAssist',
+      subject: "Booking Confirmation - HomeAssist",
       html: `
         <!DOCTYPE html>
         <html>
@@ -389,15 +391,14 @@ const sendBookingConfirmationEmail = async (email, firstName, bookingDetails) =>
           </div>
         </body>
         </html>
-      `
+      `,
     };
 
     await transporter.sendMail(mailOptions);
     console.log(`Booking confirmation email sent to ${email}`);
-    
   } catch (error) {
-    console.error('Error sending booking confirmation email:', error);
-    throw new Error('Failed to send booking confirmation email');
+    console.error("Error sending booking confirmation email:", error);
+    throw new Error("Failed to send booking confirmation email");
   }
 };
 
@@ -405,11 +406,11 @@ const sendBookingConfirmationEmail = async (email, firstName, bookingDetails) =>
 const sendWelcomeEmail = async (email, firstName) => {
   try {
     const transporter = createTransporter();
-    
+
     const mailOptions = {
       from: `"HomeAssist" <${process.env.EMAIL_USER}>`,
       to: email,
-      subject: 'Welcome to HomeAssist!',
+      subject: "Welcome to HomeAssist!",
       html: `
         <!DOCTYPE html>
         <html>
@@ -517,15 +518,14 @@ const sendWelcomeEmail = async (email, firstName) => {
           </div>
         </body>
         </html>
-      `
+      `,
     };
 
     await transporter.sendMail(mailOptions);
     console.log(`Welcome email sent to ${email}`);
-    
   } catch (error) {
-    console.error('Error sending welcome email:', error);
-    throw new Error('Failed to send welcome email');
+    console.error("Error sending welcome email:", error);
+    throw new Error("Failed to send welcome email");
   }
 };
 
@@ -533,5 +533,5 @@ module.exports = {
   sendVerificationEmail,
   sendPasswordResetEmail,
   sendBookingConfirmationEmail,
-  sendWelcomeEmail
+  sendWelcomeEmail,
 };

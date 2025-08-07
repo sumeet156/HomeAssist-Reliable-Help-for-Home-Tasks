@@ -169,7 +169,7 @@ body {
 }
 
 .tab-btn.active::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -384,7 +384,7 @@ body {
 }
 
 .checkbox-label input[type="checkbox"]:checked + .checkmark::after {
-  content: '✓';
+  content: "✓";
   color: white;
   font-size: 12px;
   font-weight: bold;
@@ -462,7 +462,7 @@ body {
 }
 
 .divider::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;
