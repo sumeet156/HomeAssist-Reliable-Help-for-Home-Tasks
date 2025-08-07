@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of Tab Favicon svg & Stylesheet -->
+    <title>HomeAssist: Reliable Help for Home Tasks</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/HomeAssist/assets/tab_logo.svg"
+    />
+    <link rel="stylesheet" href="/HomeAssist/homepage.css" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="wrapper">
+      <!-- Navbar Section -->
+      <nav class="navbar">
+        <!-- Logo SVG HomeAssist -->
+        <a href="/HomeAssist/homepage.html" class="logo">
+          <img
+            src="/HomeAssist/assets/home-assist-logo.svg"
+            alt="HomeAssist Logo"
+          />
+        </a>
+
+        <div class="nav-container">
+          <ul class="nav-links">
+            <li><a href="/HomeAssist/Servicepage/index.html">Services</a></li>
+            <li>
+              <a href="/HomeAssist/SignupLogin/signup.html" target="SignUp"
+                >Sign up / Log in</a
+              >
+            </li>
+          </ul>
+          <!-- Add to navbar -->
+          <button class="hamburger-menu" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <a href="#" class="Button-Tasker">Become a Tasker</a>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <img
+          src="/HomeAssist//assets/LeftDesign.jpg"
+          class="LeftDesign"
+          alt="Left Design"
+        />
+        <img
+          src="/HomeAssist/assets/IKEA 1.jpg"
+          class="IKEA-1"
+          alt="IKEA Service"
+        />
+
+        <!-- Hero Content -->
+        <div class="hero-content">
+          <!-- <h1>Book trusted help <br> for home tasks</h1> -->
+          <div class="hero-text">
+            <span class="Book-trusted-help"> Book trusted help </span>
+            <span class="for-home-tasks"> for home tasks </span>
+          </div>
+          <!-- Search Bar -->
+          <div class="search">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="What do you need help with?"
+            />
+            <button class="search-button">
+              <img src="/HomeAssist/assets/SearchIcon.svg" alt="Search" />
+            </button>
+          </div>
+        </div>
+        <img
+          src="/HomeAssist/assets/RightDesign.jpg"
+          class="RightDesign"
+          alt="Right Design"
+        />
+      </div>
+
+      <!-- Services Section -->
+      <div class="services-section">
+        <!-- Service Icons -->
+        <div class="services-icons">
+          <div class="service active" data-service="assembly">
+            <img src="/HomeAssist/assets/assembly.svg" alt="Assembly" />
+            <span>Assembly</span>
+          </div>
+          <div class="service" data-service="mounting">
+            <img src="/HomeAssist/assets/mounting.svg" alt="Mounting" />
+            <span>Mounting</span>
+          </div>
+          <div class="service" data-service="moving">
+            <img src="/HomeAssist/assets/moving.png" alt="Moving" />
+            <span>Moving</span>
+          </div>
+          <div class="service" data-service="cleaning">
+            <img src="/HomeAssist/assets/cleaning.svg" alt="Cleaning" />
+            <span>Cleaning</span>
+          </div>
+          <div class="service" data-service="outdoor-help">
+            <img src="/HomeAssist/assets/OutdoorHelp.svg" alt="Outdoor Help" />
+            <span>Outdoor Help</span>
+          </div>
+          <div class="service" data-service="home-repairs">
+            <img src="/HomeAssist/assets/HomeRepair.png" alt="Home Repairs" />
+            <span>Home Repairs</span>
+          </div>
+          <div class="service" data-service="painting">
+            <img src="/HomeAssist/assets/painting.svg" alt="Painting" />
+            <span>Painting</span>
+          </div>
+          <div class="service" data-service="trending">
+            <img src="/HomeAssist/assets/trending.png" alt="Trending" />
+            <span>Trending</span>
+          </div>
+          <!-- Selected Line -->
+          <div class="selected-line"></div>
+        </div>
+
+        <!-- Indicator Line -->
+        <div class="indicator-line"></div>
+
+        <!-- Service Options -->
+        <div class="service-options" id="service-options">
+          <!-- Default options for Assembly -->
+          <button>General Furniture Assembly</button>
+          <button>IKEA Assembly</button>
+          <button>Crib Assembly</button>
+          <button>PAX Assembly</button>
+          <button>Bookshelf Assembly</button>
+          <button>Desk Assembly</button>
+        </div>
+      </div>
+
+      <!-- Info Cards -->
+      <div class="info-card" id="info-card">
+        <div class="info-content">
+          <h2 id="info-title">Assembly</h2>
+          <ul id="info-list">
+            <li>
+              ✔ Assemble or disassemble furniture items by unboxing, building,
+              and any cleanup.
+            </li>
+            <li>
+              ✔ Now Trending: Curved sofas, computer desks, and sustainable
+              materials.
+            </li>
+          </ul>
+        </div>
+        <div class="info-image">
+          <img
+            id="info-img"
+            src="/HomeAssist/assets/AssemblyImg.jpg"
+            alt="Furniture Assembly"
+          />
+        </div>
+      </div>
+
+      <!-- Infobar Section -->
+      <div class="infobar-section">
+        <div class="infobar-content">
+          <div class="infobar-text">
+            <div class="infobar-item">
+              <span class="infobar-title">Furniture Assemblies:</span>
+              <span class="infobar-value">3.4 million+</span>
+            </div>
+            <div class="infobar-item">
+              <span class="infobar-title">Moving tasks:</span>
+              <span class="infobar-value">1.5 million+</span>
+            </div>
+            <div class="infobar-item">
+              <span class="infobar-title">Items mounted:</span>
+              <span class="infobar-value">1 million+</span>
+            </div>
+            <div class="infobar-item">
+              <span class="infobar-title">Home Repairs:</span>
+              <span class="infobar-value">700,000+</span>
+            </div>
+            <div class="infobar-item">
+              <span class="infobar-title">Homes cleaned:</span>
+              <span class="infobar-value">890,000+</span>
+            </div>
+          </div>
+          <img
+            src="/HomeAssist/assets/IKEA 1.jpg"
+            alt="IKEA Logo"
+            class="ikea-logo"
+          />
+        </div>
+        <img
+          src="/HomeAssist/assets/RightSemiCircle.svg"
+          alt="Right Design"
+          class="infobar-design"
+        />
+      </div>
+
+      <!-- Popular Projects Section -->
+      <div class="popular-projects">
+        <h2 class="popular-projects-title">Popular Projects</h2>
+        <div class="projects-grid">
+          <!-- Card 1: Furniture Assembly -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Furniture"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/Furniture.jpg"
+              alt="Furniture Assembly"
+              class="project-image"
+            />
+            <h3 class="project-title">Furniture Assembly</h3>
+            <p class="project-price">Projects starting at ₹2,000</p>
+          </a>
+
+          <!-- Card 2: Mount Art or Shelves -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Art"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/Art.jpg"
+              alt="Mount Art or Shelves"
+              class="project-image"
+            />
+            <h3 class="project-title">Mount Art or Shelves</h3>
+            <p class="project-price">Projects starting at ₹850</p>
+          </a>
+
+          <!-- Card 3: Mount a TV -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="MountTV"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/MountTV.png"
+              alt="Mount a TV"
+              class="project-image"
+            />
+            <h3 class="project-title">Mount a TV</h3>
+            <p class="project-price">Projects starting at ₹1,200</p>
+          </a>
+
+          <!-- Card 4: Help Moving -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Moving"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/HelpMove.jpg"
+              alt="Help Moving"
+              class="project-image"
+            />
+            <h3 class="project-title">Help Moving</h3>
+            <p class="project-price">Projects starting at ₹2,000</p>
+          </a>
+
+          <!-- Card 5: Home & Apartment Cleaning -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Cleaning"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/cleaning.jpg"
+              alt="Home & Apartment Cleaning"
+              class="project-image"
+            />
+            <h3 class="project-title">Home & Apartment Cleaning</h3>
+            <p class="project-price">Projects starting at ₹2,500</p>
+          </a>
+
+          <!-- Card 6: Minor Plumbing Repairs -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Repairs"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/plumbing.jpg"
+              alt="Minor Plumbing Repairs"
+              class="project-image"
+            />
+            <h3 class="project-title">Minor Plumbing Repairs</h3>
+            <p class="project-price">Projects starting at ₹1,500</p>
+          </a>
+
+          <!-- Card 7: Electrical Help -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Help"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/Electrical.jpg"
+              alt="Electrical Help"
+              class="project-image"
+            />
+            <h3 class="project-title">Electrical Help</h3>
+            <p class="project-price">Projects starting at ₹1,500</p>
+          </a>
+
+          <!-- Card 8: Heavy Lifting -->
+          <a
+            href="/HomeAssist/Checkout/index.html"
+            target="Lifting"
+            class="project-card"
+          >
+            <img
+              src="/HomeAssist/assets/Lifting.jpg"
+              alt="Heavy Lifting"
+              class="project-image"
+            />
+            <h3 class="project-title">Heavy Lifting</h3>
+            <p class="project-price">Projects starting at ₹1,500</p>
+          </a>
+        </div>
+        <!-- Left Design -->
+        <img
+          src="/HomeAssist/assets/LeftImg.svg"
+          alt="left Design"
+          class="LeftImg"
+        />
+      </div>
+
+      <!-- Customer Reviews Section -->
+      <div class="customer-reviews">
+        <h2 class="reviews-title">
+          See what happy customers are saying about HomeAssist
+        </h2>
+
+        <div class="reviews-grid">
+          <!-- Review 1: Priya S. -->
+          <div class="review">
+            <h3 class="review-user">Priya S.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Vikram assembled the IKEA Norli drawer chest for me in less than
+              30 minutes and also set up a metal wire shelving unit in about 10
+              minutes. Additionally, he fixed a drawer on an already assembled
+              desk so that it extends further.
+            </p>
+            <a
+              href="/HomeAssist/Checkout/index.html"
+              class="review-service"
+              style="color: #4995c4"
+              >IKEA Furniture Assembly</a
+            >
+          </div>
+
+          <!-- Review 2: Anjali M. -->
+          <div class="review">
+            <h3 class="review-user">Anjali M.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Deepak did an excellent job assembling the crib and dresser for
+              our nursery. Truly appreciate his effort! He cleaned up the area
+              after finishing the work, organized the boxes for easy disposal,
+              and even walked us through the instructions in case ...
+            </p>
+            <a href="/HomeAssist/Checkout/index.html" class="review-service"
+              >Furniture Assembly</a
+            >
+          </div>
+
+          <!-- Review 3: Radhika K. -->
+          <div class="review">
+            <h3 class="review-user">Radhika K.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Jayesh patched two holes on my wall and one on my ceiling. He
+              communicated well, was quick, professional, and did a fantastic
+              job. He even returned to apply a second layer on the patches to
+              blend them seamlessly ...
+            </p>
+            <a href="/HomeAssist/Checkout/index.html" class="review-service"
+              >Home Repairs</a
+            >
+          </div>
+
+          <!-- Review 4: Neha R. -->
+          <div class="review">
+            <h3 class="review-user">Neha R.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Arjun was amazing! He came fully prepared with all the necessary
+              tools, even bringing hardware that I didn't realize I would need.
+              He hung a heavy chandelier perfectly and secured a cabinet to our
+              wall. I would 100% hire him again.
+            </p>
+            <a href="/HomeAssist/Checkout/index.html" class="review-service"
+              >Electrical Help</a
+            >
+          </div>
+
+          <!-- Review 5: Meera V. -->
+          <div class="review">
+            <h3 class="review-user">Meera V.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Jiten fixed my AC drain line, which was causing a clog in my
+              master bathroom sink. He was prompt, communicated well, and worked
+              efficiently. Highly recommend!
+            </p>
+            <a href="/HomeAssist/Checkout/index.html" class="review-service"
+              >Plumbing</a
+            >
+          </div>
+
+          <!-- Review 6: Kavita D. -->
+          <div class="review">
+            <h3 class="review-user">Kavita D.</h3>
+            <div class="review-rating">
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+              <img src="/HomeAssist/assets/Star.svg" alt="Star" />
+            </div>
+            <p class="review-comment">
+              Manoj did a great job installing frameless glass-hinged shower
+              doors, even though the setup was quite tricky. He was patient and
+              worked with us to figure out the best way to install them. Thank
+              you, Manoj!
+            </p>
+            <a href="/HomeAssist/Checkout/index.html" class="review-service"
+              >General Mounting</a
+            >
+          </div>
+        </div>
+
+        <!-- Excellent Rating Image -->
+        <img
+          src="/HomeAssist/assets/Excellent_Rating.jpg"
+          alt="Excellent Rating"
+          class="excellent-rating"
+        />
+      </div>
+
+      <!-- Satisfaction Section -->
+      <div class="satisfaction-section">
+        <h2 class="satisfaction-title">
+          Your satisfaction, <span class="guaranteed">guaranteed</span>
+        </h2>
+        <div class="pledges-grid">
+          <!-- Pledge 1: Happiness Pledge -->
+          <div class="pledge">
+            <h3 class="pledge-title">Happiness Pledge</h3>
+            <p class="pledge-content">
+              If you're not satisfied,
+              <strong>we'll work to make it right.</strong>
+            </p>
+          </div>
+
+          <!-- Pledge 2: Vetted Taskers -->
+          <div class="pledge">
+            <h3 class="pledge-title">Vetted Taskers</h3>
+            <p class="pledge-content">
+              Taskers are always background checked before joining the platform.
+            </p>
+          </div>
+
+          <!-- Pledge 3: Dedicated Support -->
+          <div class="pledge">
+            <h3 class="pledge-title">Dedicated Support</h3>
+            <p class="pledge-content">
+              Friendly service when you need us – every day of the week.
+            </p>
+          </div>
+        </div>
+        <!-- Right Circle Design -->
+        <img
+          src="/HomeAssist/assets/rightImgCircle.svg"
+          alt="Right Circle Design"
+          class="right-circle-design"
+        />
+      </div>
+
+      <!-- How It Works Section -->
+      <div class="how-it-works-section">
+        <!-- Rectangle Background -->
+        <div class="how-it-works-rectangle">
+          <!-- Image in the Middle -->
+          <img
+            src="/HomeAssist/assets/work2.jpg"
+            alt="How It Works"
+            class="how-it-works-image"
+          />
+
+          <!-- Tab on the Image -->
+          <div class="how-it-works-tab">
+            <h2 class="how-it-works-title">How it works</h2>
+            <ol class="how-it-works-steps">
+              <!-- Step 1 -->
+              <li class="step">
+                <div class="step-number">1</div>
+                <p class="step-description">
+                  Choose a Tasker by price, skills, and reviews.
+                </p>
+              </li>
+
+              <!-- Step 2 -->
+              <li class="step">
+                <div class="step-number2">2</div>
+                <p class="step-description">
+                  Schedule a Tasker as early as today.
+                </p>
+              </li>
+
+              <!-- Step 3 -->
+              <li class="step">
+                <div class="step-number3">3</div>
+                <p class="step-description">
+                  Chat, pay, tip, and review all in one place.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Get Help Section -->
+      <div class="get-help-section">
+        <h2 class="get-help-title">Get Help Today</h2>
+        <div class="get-help-buttons">
+          <!-- Buttons -->
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >General Mounting</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >House Cleaning</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Shelf Mounting</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >TV Mounting</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Yardwork</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Light Installation</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Furniture Assembly</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Furniture Removal</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Plumbing</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >IKEA Furniture Assembly</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Lawn Care</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Hang Pictures</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >Help Moving</a
+          >
+          <a href="/HomeAssist/Checkout/index.html" class="get-help-button"
+            >In Home Furniture Movers</a
+          >
+        </div>
+        <a href="/HomeAssist/Servicepage/index.html" class="see-all-services">
+          See All Services
+          <img
+            src="/HomeAssist/assets/arrowtoallservices.svg"
+            alt="Arrow"
+            class="arrow-icon"
+          />
+        </a>
+      </div>
+
+      <!-- Right Edge Design -->
+      <img
+        src="/HomeAssist/assets/JaliLeftSquares.svg"
+        alt="Jali Left Squares"
+        class="jali-left-squares"
+      />
+
+      <!-- Left Edge Design -->
+      <img
+        src="/HomeAssist/assets/RightImg.svg"
+        alt="Right Design"
+        class="right-img"
+      />
+
+      <!-- Footer Section -->
+      <footer class="footer-section">
+        <!-- Title and Social Media Logos -->
+        <div class="footer-header">
+          <h2 class="follow-us-title">Follow us! We're friendly:</h2>
+          <div class="social-media-logos">
+            <a href="https://facebook.com" target="_blank">
+              <img
+                src="/HomeAssist/assets/fb.svg"
+                alt="Facebook"
+                class="social-logo"
+              />
+            </a>
+            <span class="separator"></span>
+            <a href="https://twitter.com" target="_blank">
+              <img
+                src="/HomeAssist/assets/x.svg"
+                alt="Twitter"
+                class="social-logo"
+              />
+            </a>
+            <span class="separator"></span>
+            <a href="https://instagram.com" target="_blank">
+              <img
+                src="/HomeAssist/assets/insta.svg"
+                alt="Instagram"
+                class="social-logo"
+              />
+            </a>
+            <span class="separator"></span>
+            <a href="https://linkedin.com" target="_blank">
+              <img
+                src="/HomeAssist/assets/in.svg"
+                alt="LinkedIn"
+                class="social-logo"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Footer Columns -->
+        <div class="footer-columns">
+          <!-- Column 1: Discover -->
+          <div class="footer-column">
+            <h3 class="column-title">Discover</h3>
+            <ul class="column-links">
+              <li><a href="#">Become a Tasker</a></li>
+              <li><a href="/services-by-city.html">Services By City</a></li>
+              <li><a href="/services-nearby.html">Services Nearby</a></li>
+              <li><a href="/all-services.html">All Services</a></li>
+              <li><a href="/elite-taskers.html">Elite Taskers</a></li>
+              <li><a href="/help.html">Help</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Company -->
+          <div class="footer-column">
+            <h3 class="column-title">Company</h3>
+            <ul class="column-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Partner with HomeAssit</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="#">HomeAssit for Good</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Terms & Privacy</a></li>
+              <li>
+                <a href="/do-not-sell.html"
+                  >Do not Sell My Personal Information</a
+                >
+              </li>
+              <li><a href="/legal.html">Legal</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Download our app -->
+          <div class="footer-column">
+            <h3 class="column-title">Download our app</h3>
+            <p class="app-description">
+              Tackle your to-do list wherever you are with our mobile app.
+            </p>
+            <div class="app-download-buttons">
+              <a href="https://appstore.com" target="_blank">
+                <img
+                  src="/HomeAssist/assets/Appstore.svg"
+                  alt="App Store"
+                  class="app-logo"
+                />
+              </a>
+              <a href="https://play.google.com" target="_blank">
+                <img
+                  src="/HomeAssist/assets/Googleplay.svg"
+                  alt="Google Play"
+                  class="app-logo"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="homepage.js"></script>
+  </body>
+</html>
